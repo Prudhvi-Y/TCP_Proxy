@@ -1,0 +1,12 @@
+#Run the tcp server first
+go run tcp server.go 127.0.1:6588
+currently this port is fixed in proxy...
+
+#Run the tcp proxy
+go run tcp_proxy.go 127.0.0.1:9005
+can give any port here
+
+#Run the tcp multi client
+go run tcp_multi_client.go 127.0.0.1:9005 100 hello
+first argument is proxy server port name, second is no.of clients,
+third argument is the message you want to send
