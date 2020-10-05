@@ -17,7 +17,7 @@ func main() {
 		return
 	}
 
-	PORT := arguments[1] + ":" + arguments[2]
+	PORT := arguments[1]
 
 	log.Println("Server started on https://", PORT)
 

@@ -28,7 +28,7 @@ func Startup() {
 		log.Println("collection not created")
 	}
 
-	query := "FOR d IN proxy RETURN d"
+	query := "FOR d IN tcpproxy RETURN d"
 	cursor, err := db.Query(nil, query, nil)
 	if err != nil {
 		panic(err)

@@ -41,7 +41,6 @@ func tcplns(tcph *TCPHandler) {
 	if err != nil {
 		panic(err)
 	}
-	log.Println(tcpaddr)
 
 	l, err := net.ListenTCP("tcp", tcpaddr)
 	if err != nil {
@@ -53,13 +52,11 @@ func tcplns(tcph *TCPHandler) {
 	if err != nil {
 		panic(err)
 	}
-	log.Println(tcpaddr)
 
 	p, err := net.DialTCP("tcp", nil, tcpaddr)
 	if err != nil {
 		panic(err)
 	}
-	log.Panicln("*************")
 
 	tcph.listen = l
 	tcph.sender = p
