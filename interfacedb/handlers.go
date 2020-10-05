@@ -27,7 +27,7 @@ func ShowAll(w http.ResponseWriter, r *http.Request) {
 
 	db := ardb.DbConn()
 
-	query := "FOR d IN proxy RETURN d"
+	query := "FOR d IN tcpproxy RETURN d"
 	cursor, err := db.Query(nil, query, nil)
 	if err != nil {
 		panic(err)
@@ -116,7 +116,6 @@ func Insert(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(422) // unprocessable entity
 			if err := json.NewEncoder(w).Encode(err); err != nil {
 				panic(err)
-				return
 			}
 		}
 
@@ -222,7 +221,6 @@ func Update(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(422) // unprocessable entity
 			if err := json.NewEncoder(w).Encode(err); err != nil {
 				panic(err)
-				return
 			}
 			return
 		}
