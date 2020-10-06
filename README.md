@@ -1,6 +1,9 @@
 # TCP_Proxy
 tcp proxy server
 
+Pre-requisites:
+Need arrangodb and gorillamux golang projects.
+
 Usage:
 go run main.go <IP:PORT>
 
