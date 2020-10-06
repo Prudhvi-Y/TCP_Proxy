@@ -100,6 +100,7 @@ func Calcdata(seconds time.Duration) {
 // Shutdown function is to close the tcp proxy
 func (tcph *TCPHandler) Shutdown() {
 	log.Printf("shutting down proxy port %s server %s \n", tcph.ts.Ps.From.IP, tcph.ts.Ps.To.IP)
+	close(tcph.closed)
 	tcph.listen.Close()
 	tcph.sender.Close()
 }
